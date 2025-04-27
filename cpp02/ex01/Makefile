@@ -1,4 +1,4 @@
-NAME			=	Zombie
+NAME			=	Fixed
 
 SRC_DIR		=	./src/
 OBJ_DIR		=	obj/
@@ -8,9 +8,7 @@ MAIN_INC	= -I $(INCS_DIR)
 INCS		=	$(shell find $(INCS_DIR) -type f -name "*.hpp")
 
 SRC			=	main.cpp \
-				Zombie.cpp \
-				newZombie.cpp \
-				randomChump.cpp
+				Fixed.cpp
 				
 OBJ			=	$(addprefix $(OBJ_DIR), $(SRC:.cpp=.o))
 
