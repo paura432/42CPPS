@@ -3,10 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pramos <pramos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pau <pau@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:44:39 by pramos            #+#    #+#             */
-/*   Updated: 2024/10/21 17:44:40 by pramos           ###   ########.fr       */
+/*   Updated: 2025/04/05 14:06:48 by pau              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/Zombie.hpp"
+
+Zombie* newZombie( string_t n )
+{
+    return new Zombie(n);
+}

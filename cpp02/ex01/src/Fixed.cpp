@@ -6,7 +6,7 @@
 /*   By: pau <pau@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 13:06:12 by pau               #+#    #+#             */
-/*   Updated: 2025/04/27 14:48:12 by pau              ###   ########.fr       */
+/*   Updated: 2025/04/27 20:15:39 by pau              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,26 @@ Fixed::Fixed(const Fixed& other) {
     *this = other;
 }
 
-Fixed::Fixed(const int value) 
+Fixed::Fixed(const int value) : _value(roundf(value * (1 << _fracint))) {
+    std::cout << "Float constructor called" << std::endl;
+}
+
+Fixed::Fixed(const float value) : _value(roundf(value * (1 << _fracint))) {
+    std::cout << "Float constructor called" << std::endl;
+}
+
+float Fixed::toFloat(void) const {
+    return static_cast<float>(_value) / (1 << _fracint);
+}
+
+int Fixed::toInt(void) const {
+    return _value >> _fracint;
+}
+
+std::ostream& operator<<(std::ostream& os, const Fixed& obj) {
+    os << obj.toFloat();
+    return os;
+}
 
 Fixed& Fixed::operator=(const Fixed& rhs) {
     std::cout << "Copy assignment operator called" << std::endl;

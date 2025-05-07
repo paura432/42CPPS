@@ -1,24 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pau <pau@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/17 22:16:31 by pau               #+#    #+#             */
+/*   Updated: 2025/03/17 22:16:32 by pau              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
 #include <iostream>
+#include <contact.hpp>
 
 typedef std::string string_t;
-
-class Contact{
-    private :
-        int      index;
-        string_t first_name;
-        string_t last_name;
-        string_t nickname;
-        string_t phone;
-        string_t secret;
-    public :
-        Contact();
-        ~Contact();
-
-        Contact(std::string first_name, std::string last_name, std::string nickname, std::string phone, std::string secret); //constructor
-};
 
 class PhoneBook{
     private :
@@ -27,6 +25,8 @@ class PhoneBook{
         PhoneBook();
         ~PhoneBook();
         int check_num(PhoneBook pb);
+        int check_pb(PhoneBook pb);
+        void display(PhoneBook pb);
         PhoneBook del_pb(PhoneBook pb);
         PhoneBook add_cont(PhoneBook pb, int i);
         void exit();

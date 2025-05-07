@@ -8,9 +8,9 @@ MAIN_INC	= -I $(INCS_DIR)
 INCS		=	$(shell find $(INCS_DIR) -type f -name "*.hpp")
 
 SRC			=	main.cpp \
-				# Zombie.cpp \
-				# newZombie.cpp \
-				# randomChump.cpp
+				Zombie.cpp \
+				newZombie.cpp \
+				randomChump.cpp
 				
 OBJ			=	$(addprefix $(OBJ_DIR), $(SRC:.cpp=.o))
 
@@ -33,5 +33,8 @@ fclean		:	clean
 		@rm -rf $(NAME)
 
 re			:	fclean	all
+
+exec		:	re 
+	@./$(NAME)
 
 .PHONY		:	all clean fclean re
