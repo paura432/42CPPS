@@ -21,7 +21,7 @@ int main()
 {
     std::cout << "=== Probando clases Animal, Dog y Cat con polimorfismo ===" << std::endl;
     
-    const Animal* meta = new Animal(); // Esto fallará si Animal es abstracta
+    const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
     
@@ -41,7 +41,7 @@ int main()
     std::cout << "\n--- Probando objetos directos ---" << std::endl;
     Dog perro;
     Cat gato;
-    Animal animal; // Esto también fallará si Animal es abstracta
+    Animal animal;
     
     std::cout << "perro.getType(): " << perro.getType() << std::endl;
     std::cout << "gato.getType(): " << gato.getType() << std::endl;
